@@ -8,13 +8,13 @@
     "maps",
     "samples"
   ],
-  "homepage": "https://github.com/jaiderpobce/calculadora",
+  "homepage": "https://github.com/googlemaps/js-samples#readme",
   "bugs": {
-    "url": "https://github.com/jaiderpobce/calculadora"
+    "url": "https://github.com/googlemaps/js-samples/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaiderpobce/calculadora.git"
+    "url": "git+https://github.com/googlemaps/js-samples.git"
   },
   "files": [],
   "license": "Apache-2.0",
