@@ -1,6 +1,6 @@
 {
-  "name": "drawing-tools",
-  "description": "Samples for Google Maps JavaScript",
+  "name": "calculadora",
+  "description": "calculadora para techos",
   "version": "2.1.4",
   "keywords": [
     "google",
@@ -8,27 +8,28 @@
     "maps",
     "samples"
   ],
-  "homepage": "https://github.com/googlemaps/js-samples#readme",
+  "homepage": "https://github.com/jaiderpobce/calculadora",
   "bugs": {
-    "url": "https://github.com/googlemaps/js-samples/issues"
+    "url": "https://github.com/jaiderpobce/calculadora"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/googlemaps/js-samples.git"
+    "url": "git+https://github.com/jaiderpobce/calculadora.git"
   },
   "files": [],
   "license": "Apache-2.0",
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "vite build",
+  
+   "build": "vite build ",
     "test": "tsc --no-emit",
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@types/google.maps": "^3.53.5",
+    "@types/google.maps": "^3.58.1",
     "typescript": "^5.7.3",
-    "vite": "^5.4.14"
+    "vite": "^6.0.11"
   },
   "private": true,
   "dependencies": {
