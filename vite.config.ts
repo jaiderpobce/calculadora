@@ -8,5 +8,5 @@ export default defineConfig({
         ? 443
         : undefined,
   },
-  base:'https://jaiderpobce.github.io/calculadora/',
+ // base:'https://jaiderpobce.github.io/calculadora/',
 });
