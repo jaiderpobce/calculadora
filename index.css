@@ -65,7 +65,7 @@ body {
 
   #header {
     background: #263037;
-    width: 98%;
+    width: 100%;
     height: 70px;
     /* Altura del header */
     color: white;
@@ -236,10 +236,32 @@ height: 2vw !important;
       text-align: center;
       min-height: 100vh;
     }
+    .you-need{
+      font-size: 0.8vw;
+    }
+    .div-you-need{
+      height: 2.099vh; width: 20vw; margin-bottom: 1.1vw;margin-top: -1vw;
+    }
   }
 
   /* Estilos para pantallas más pequeñas */
   @media (max-width: 899px) {
+    .you-need{
+      font-size: 2vw;
+    }
+    .div-you-need{
+      height: 2.099vh; width: 30vw; margin-bottom: 1.1vw;margin-top: -1vw;
+    }
+    #footer {
+      background: #263037;
+      color: white;
+      height: 50px;
+      text-align: center;
+      font-size: 3vw;
+      width: 100%;
+      padding: 1em 0;
+      margin-top: auto;
+  }
 
     #map-container,
     #data-container,
