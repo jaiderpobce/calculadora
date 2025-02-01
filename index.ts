@@ -8,7 +8,7 @@
 // Este ejemplo requiere la biblioteca de Dibujo. Incluye los parámetros libraries=drawing  
 // cuando cargues la API por primera vez. Por ejemplo:  
 //<script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&libraries=drawing">  </script>
-
+import "./index.css";
 function initMap(): void {  
   const mapDiv = document.getElementById("map") as HTMLElement | null;  
   if (!mapDiv) {  
@@ -30,8 +30,8 @@ function initMap(): void {
     gestureHandling: 'false',  
   });  
 
-  const searchInput = createSearchInput();  
-  const searchButton = createSearchButton();  
+  //const searchInput = createSearchInput();  
+  //const searchButton = createSearchButton();  
   const addressInput = document.getElementById("addressInput") as HTMLInputElement | null;   
   const calculateInput = document.getElementById("calculateInput");   
 
@@ -51,12 +51,12 @@ function initMap(): void {
   }  
 
   // Eventos para botones  
-  searchButton.addEventListener("click", () => {  
+/*  searchButton.addEventListener("click", () => {  
     if (addressInput) {  
       searchLocation(addressInput.value);  
     }  
   });  
-  
+*/  
   const areaButton = document.getElementById("calculateAreaBtn");  
   if (areaButton) {  
     areaButton.addEventListener("click", showContactDiv);  
@@ -177,7 +177,7 @@ function initMap(): void {
       });  
     }  
   }  
-
+/*
   function createSearchInput(): HTMLInputElement {  
     const input = document.createElement("input");  
     input.type = "text";  
@@ -187,7 +187,8 @@ function initMap(): void {
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);  
     return input;  
   }  
-
+*/
+/*
   function createSearchButton(): HTMLButtonElement {  
     const button = document.createElement("button");  
     button.id = "searchButton";  
@@ -196,7 +197,7 @@ function initMap(): void {
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(button);  
     return button;  
   }  
-
+*/
   $(document).ready(function() {  
     initSelect2('#roofing');  
     initSelect2('#type-type');  
