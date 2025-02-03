@@ -18,7 +18,7 @@
 <body>
   <div style="width: 100vw;   align-items: center;">
     <div id="header">
-      <img src="image/logo.png" alt="Logo"> <!-- Cambia la ruta de la imagen aquí -->
+      <img class="image-heard" src="image/logo.png" alt="Logo"> <!-- Cambia la ruta de la imagen aquí -->
     </div>
 
     <div id="container">
@@ -92,7 +92,7 @@
                 <label for="roof-material" style="margin-left: 1vw;">Roof material</label> 
                 <select id="roof-material" name="select1" required class="custom-select"  style="margin-left: 1vw;">  
                       
-                    <option value="Shingles" selected >Shingles</option>  
+                    <option class="option-form" value="Shingles" selected >Shingles</option>  
                  
                 </select>  
             </div>  
@@ -148,7 +148,7 @@
         </div>  
         <div class="flex-container">  
             <div class="select-container" style="display: flex; flex-wrap: wrap; justify-content: space-between;">  
-                <div style="width: 40%;">
+                <div class="div-select" >
                   <label for="select1" style="margin-left: 1.2vw;">Type of ventilation</label>
                 <select id="ventilation" name="ventilation" required class="custom-select" style="margin-left: 1.2vw;">  
                     <option value="" disabled selected>Select</option>  
@@ -157,9 +157,9 @@
                    
                 </select> 
               </div>
-              <div style="width: 50%;  text-align: left">
-                <label for="Chimney">Chimney</label>
-                <select id="Chimney" name="Chimney" required class="custom-select">  
+              <div  class="div-select" style="  text-align: left">
+                <label style="margin-left: 1.2vw; " for="Chimney">Chimney</label>
+                <select id="Chimney" name="Chimney" required class="custom-select" style="margin-left: 1.2vw;">  
                   <option value="" disabled selected>Select</option>  
                   <option value="opcion1">Yes</option>  
                   <option value="opcion2">No</option>  
