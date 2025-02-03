@@ -253,6 +253,9 @@ height: 2vw !important;
     .select2-container--default .select2-selection--single {
       border-radius: 0.5vw !important;
       height: 6vw !important;
+     
+      text-align: left !important;
+      font-size: 3vw;
       }
     .select2-selection--single {
       border-radius: 0.5vw !important;
