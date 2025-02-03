@@ -136,6 +136,14 @@ function initMap(): void {
             fontSize: '20px',  
           },  
         });  
+
+        // aqui
+         // Habilitar el botón de cálculo  
+         $('#calculateAreaBtn').prop('disabled', false);  
+         // Cambiar el color de fondo del botón a negro  
+         $('#calculateAreaBtn').css('background-color', 'black');  
+         $('#calculateAreaBtn').css('color', 'white'); // Cambiar el color del texto a blanco para mejorar la visibilidad  
+       
       }  
     });  
   }  
@@ -201,6 +209,22 @@ function initMap(): void {
   $(document).ready(function() {  
     initSelect2('#roofing');  
     initSelect2('#type-type');  
+       // Al hacer clic en el botón "Select Area"  
+       $('#calculateInput').on('click', function() {  
+        // Habilitar el botón de cálculo  
+       /// $('#calculateAreaBtn').prop('disabled', false);  
+        // Cambiar el color de fondo del botón a negro  
+      //  $('#calculateAreaBtn').css('background-color', 'black');  
+      //  $('#calculateAreaBtn').css('color', 'white'); // Cambiar el color del texto a blanco para mejorar la visibilidad  
+      
+      });  
+  
+      // (Opcional) Agregar un evento para el botón cuando esté habilitado  
+      $('#calculateAreaBtn').on('click', function() {  
+        alert('Calculando el área...');  
+        // Aquí puedes agregar la lógica para calcular el área  
+      }); 
+
   });  
 
   function initSelect2(selector: string) {  
