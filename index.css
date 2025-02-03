@@ -201,9 +201,13 @@ height: 2vw !important;
   
   margin-left: -1vw;
 }
+.div-select{
+  width: 40%;
+}
 
   /* Estilos específicos para pantallas grandes */
   @media (min-width: 900px) {
+  
     #map-container {
       width: 20%;
       /* Ancho del 20% */
@@ -246,6 +250,36 @@ height: 2vw !important;
 
   /* Estilos para pantallas más pequeñas */
   @media (max-width: 899px) {
+    .select2-selection--single {
+      border-radius: 0.5vw !important;
+      height: 6vw !important;
+      border-radius: 1.5vw !important;
+  }
+
+    .div-select{
+      width: 100%;
+    }
+    .option-form{
+      font-weight: normal;
+      display: block;
+      padding-block-start: 0px;
+      padding-block-end: 1px;
+      min-block-size: 1.2em;
+      padding-inline: 2px;
+      white-space: nowrap;
+    }
+    .input-descrip input {
+      width: 97%;
+      border-radius: 0.5vw;
+      height: 2.7vw;
+      padding-left: 1vw;
+    }
+    #header img {
+      width: 109px;
+      height: 26px;
+      margin-right: 10px;
+      margin-left: 10vw;
+  }
     .color-box {  
       width: 10%;  
      
