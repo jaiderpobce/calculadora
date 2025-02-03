@@ -250,6 +250,10 @@ height: 2vw !important;
 
   /* Estilos para pantallas más pequeñas */
   @media (max-width: 899px) {
+    .select2-container--default .select2-selection--single {
+      border-radius: 0.5vw !important;
+      height: 6vw !important;
+      }
     .select2-selection--single {
       border-radius: 0.5vw !important;
       height: 6vw !important;
