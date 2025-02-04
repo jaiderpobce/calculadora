@@ -15,7 +15,7 @@ function initMap(): void {
     console.error("Elemento con id 'map' no encontrado.");  
     return;  
   }  
-
+  let isButtonClicked = false;  
   const map = new google.maps.Map(mapDiv, {  
     center: { lat: 33.9541, lng: -84.5321 },  
     zoom: 20,  
@@ -144,7 +144,10 @@ function initMap(): void {
          // Cambiar el color de fondo del botón a negro  
          $('#calculateAreaBtn').css('background-color', '#3B82F6');  
          $('#calculateAreaBtn').css('color', 'white'); // Cambiar el color del texto a blanco para mejorar la visibilidad  
-         
+         calculateArea();
+         $('#calculateInput').css('background-color', '');  
+         $('#calculateInput').css('color', '');  
+         isButtonClicked = false;  
       }  
     });  
   }  
@@ -230,7 +233,7 @@ function initMap(): void {
     initSelect2('#roofing');  
     initSelect2('#type-type');  
        // Al hacer clic en el botón "Select Area"
-       let isButtonClicked = false;   
+       
        $('#calculateInput').on('click', function() { 
        // $('#calculateInput').css('background-color', '#9F9F9F');  
        // $('#calculateInput').css('color', 'white');  
