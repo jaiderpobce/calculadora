@@ -11,6 +11,21 @@ body {
 
     text-align: left;
   }
+  .butondatos2-div{
+    height: 2vw; background-color: rgba(181, 181, 181, 1); border-radius: 0.5vw;
+  }
+  .Enter-div{
+    margin-top: 0.1vw !important; 
+    height: 1vw !important;
+  }
+  .Almost-div{
+    height: 2vw;margin-bottom: 0.1vw; background-color: brown;
+  }
+  .Back-div{
+    background-color: #fff;
+     width: 100% !important;
+    justify-content: left !important;
+  }
 
   .outer-container {  
     display: flex;  
@@ -267,6 +282,7 @@ height: 2vw !important;
 
   /* Estilos específicos para pantallas grandes */
   @media (min-width: 900px) {
+
   
     #map-container {
       width: 20%;
@@ -310,13 +326,39 @@ height: 2vw !important;
 
   /* Estilos para pantallas más pequeñas */
   @media (max-width: 899px) {
+    .butondatos2-div{
+      height: 8vw; background-color: rgba(181, 181, 181, 1); border-radius: 0.5vw;
+    }
+    .Enter-div{
+       margin-top: 0.1vw;
+       height: 1vw;
+    }
+    .inner-div {  
+      width: 80%;  
+      height: 10vw !important; 
+     /* background-color: #ccc; */ 
+      margin: 10px 0;  
+      display: flex;  
+      justify-content: center;  
+      align-items: center;  
+    } 
+    .Almost-div{
+      height: 20vw;margin-bottom: 0.1vw; background-color: brown;
+    }
+    .Back-div{
+      background-color: #fff;
+       width: 100% !important;
+      justify-content: left !important;
+      margin-bottom: 20vw;
+    }
     .inner-container {
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          height: 50%;
+          height: 95%;
           width: 100%;
+          background-color: #7136fb !important;
       }
 
     .select2-container--default .select2-selection--single {
