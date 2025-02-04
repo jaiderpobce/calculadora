@@ -142,9 +142,9 @@ function initMap(): void {
          // Habilitar el botón de cálculo  
          $('#calculateAreaBtn').prop('disabled', false);  
          // Cambiar el color de fondo del botón a negro  
-         $('#calculateAreaBtn').css('background-color', 'black');  
+         $('#calculateAreaBtn').css('background-color', '#3B82F6');  
          $('#calculateAreaBtn').css('color', 'white'); // Cambiar el color del texto a blanco para mejorar la visibilidad  
-       
+         
       }  
     });  
   }  
@@ -166,7 +166,7 @@ function initMap(): void {
   function changeButtonColor() {  
     const button = document.getElementById("calculateAreaBtn");  
     if (button) {  
-      button.style.backgroundColor = "#00BFFF";  
+      button.style.backgroundColor = "#3B82F6";  
       button.style.color = "white";  
     }  
   }   
@@ -208,17 +208,41 @@ function initMap(): void {
     return button;  
   }  
 */
+        function cleanArea() {  
+          if (polygon) {  
+            polygon.setMap(null);  
+            polygon = null;  
+          }  
+          if (areaText) {  
+            areaText.setMap(null);  
+            areaText = null;  
+          }  
+          tableData = [];  
+          totalArea = 0;  
+          cargarTabla();  
+          // Deshabilitar el botón de cálculo  
+          $('#calculateAreaBtn').prop('disabled', true);  
+          $('#calculateAreaBtn').css('background-color', '#808080');  
+          $('#calculateAreaBtn').css('color', '#DCDCDC');  
+        } 
+
   $(document).ready(function() {  
     initSelect2('#roofing');  
     initSelect2('#type-type');  
-       // Al hacer clic en el botón "Select Area"  
-       $('#calculateInput').on('click', function() {  
-        // Habilitar el botón de cálculo  
-       /// $('#calculateAreaBtn').prop('disabled', false);  
-        // Cambiar el color de fondo del botón a negro  
-      //  $('#calculateAreaBtn').css('background-color', 'black');  
-      //  $('#calculateAreaBtn').css('color', 'white'); // Cambiar el color del texto a blanco para mejorar la visibilidad  
-      
+       // Al hacer clic en el botón "Select Area"
+       let isButtonClicked = false;   
+       $('#calculateInput').on('click', function() { 
+       // $('#calculateInput').css('background-color', '#9F9F9F');  
+       // $('#calculateInput').css('color', 'white');  
+        if (!isButtonClicked) {  
+          $('#calculateInput').css('background-color', '#9F9F9F');  
+          $('#calculateInput').css('color', 'white');  
+          isButtonClicked = true;  
+        } else {  
+          $('#calculateInput').css('background-color', '');  
+          $('#calculateInput').css('color', '');  
+          isButtonClicked = false;  
+        }  
       });  
   
       // (Opcional) Agregar un evento para el botón cuando esté habilitado  
@@ -479,6 +503,10 @@ function initMap(): void {
           $('#Numbers').on('input', updateNumberOfStoriesValue);  
           $('#Skylights').on('input', updateSkylightsValue); 
           $('#addressInput').on('input', updateAddressValue); 
+          $('#return-boton').click(function() {  
+            cleanArea();  
+            //location.reload();  
+          });  
 
       ////////////////////////////////////////////////
 
