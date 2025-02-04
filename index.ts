@@ -247,6 +247,11 @@ function initMap(): void {
           isButtonClicked = false;  
         }  
       });  
+
+      $('#butondatos2').on('click', function() {
+        console.log('entro');
+        storeFormData();
+        });
   
       // (Opcional) Agregar un evento para el botón cuando esté habilitado  
       $('#calculateAreaBtn').on('click', function() {  
@@ -478,6 +483,20 @@ function initMap(): void {
             const value = $('#addressInput').val();  
             setAddressValue(value);  
           }  
+          function storeFormData() { 
+            //alert('entro'); 
+            localStorage.setItem('firstname', $('#firstname').val());  
+            localStorage.setItem('lastname', $('#lastname').val());  
+            localStorage.setItem('phone', $('#phone').val());  
+            localStorage.setItem('email', $('#email').val());  
+          }  
+      
+          function loadFormData() {  
+            $('#firstname').val(localStorage.getItem('firstname') || '');  
+            $('#lastname').val(localStorage.getItem('lastname') || '');  
+            $('#phone').val(localStorage.getItem('phone') || '');  
+            $('#email').val(localStorage.getItem('email') || '');  
+          }  
 
 
           // Inicializar la aplicación  
@@ -491,6 +510,7 @@ function initMap(): void {
           loadSkylightsValue();  
           loadVentilationType();  
           loadAddressValue();  
+          loadFormData();  
 
           // Agregar los eventos change a los elementos  
           $('#roof-material').change(updateRoofMaterialValue);  
@@ -509,6 +529,8 @@ function initMap(): void {
           $('#return-boton').click(function() {  
             cleanArea();  
             //location.reload();  
+           // $('#buton-datos').click(storeFormData); 
+           
           });  
 
       ////////////////////////////////////////////////
@@ -525,7 +547,7 @@ function initMap(): void {
     });   
   } */
     function initSelect2(selector: string,id: string) {  
-      let nombre=`${id}`;
+      //let nombre=`${id}`;
      
       /* if(nombre=='#roofing'){
         const selectedValue = localStorage.getItem('roofingValue');
@@ -535,7 +557,7 @@ function initMap(): void {
         //const selectedValue = localStorage.getItem('roofingValue');
         const selectedValue = localStorage.getItem(`${id}`);
       
-      console.log(nombre);
+      //console.log(nombre);
       $(selector).select2({  
         templateResult: formatOption,  
         templateSelection: formatOption,  
