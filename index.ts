@@ -230,8 +230,8 @@ function initMap(): void {
         } 
 
   $(document).ready(function() {  
-    initSelect2('#roofing');  
-    initSelect2('#type-type');  
+    initSelect2('#roofing','roofingValue');  
+    initSelect2('#type-type','roofTypeValue');  
        // Al hacer clic en el botón "Select Area"
        
        $('#calculateInput').on('click', function() { 
@@ -515,7 +515,7 @@ function initMap(): void {
 
   });  
   //
-
+/*
   function initSelect2(selector: string) {  
     $(selector).select2({  
       templateResult: formatOption,  
@@ -523,7 +523,31 @@ function initMap(): void {
       minimumResultsForSearch: Infinity,  
       width: '300px'  
     });   
-  }  
+  } */
+    function initSelect2(selector: string,id: string) {  
+      let nombre=`${id}`;
+     
+      /* if(nombre=='#roofing'){
+        const selectedValue = localStorage.getItem('roofingValue');
+       }else {
+        const selectedValue = localStorage.getItem('roofTypeValue');
+       }*/
+        //const selectedValue = localStorage.getItem('roofingValue');
+        const selectedValue = localStorage.getItem(`${id}`);
+      
+      console.log(nombre);
+      $(selector).select2({  
+        templateResult: formatOption,  
+        templateSelection: formatOption,  
+        minimumResultsForSearch: Infinity,  
+        width: '300px',  
+        // Agregar la opción de valor seleccionado  
+        value: selectedValue,  
+      });  
+    
+      // Establecer el valor seleccionado en el campo  
+      $(selector).val(selectedValue).trigger('change');  
+    }   
 
   function formatOption(option: any) {  
     if (!option.id) {  
