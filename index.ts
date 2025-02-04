@@ -148,6 +148,7 @@ function initMap(): void {
     });  
   }  
 
+
   // Mostrar el div de contacto  
   function showContactDiv() {  
     const buttonsDiv = document.querySelector("#div-botones");  
@@ -224,6 +225,238 @@ function initMap(): void {
         alert('Calculando el área...');  
         // Aquí puedes agregar la lógica para calcular el área  
       }); 
+
+      /////////////////////////////////////////////
+       // Función para obtener el valor de la variable en localStorage  
+       /*
+  function getChimneyValue() {  
+    return localStorage.getItem('chimneyValue') || '';  
+  }  
+
+  // Función para establecer el valor de la variable en localStorage  
+  function setChimneyValue(value) {  
+    localStorage.setItem('chimneyValue', value);  
+  }  
+
+  // Función para cargar el valor en el <select>  
+  function loadChimneyValue() {  
+    const chimneyValue = getChimneyValue();  
+    $('#Chimney').val(chimneyValue);  
+  }  
+
+  // Función para actualizar la variable en localStorage cuando se cambia la selección  
+  function updateChimneyValue() {  
+   console.log('updateChimneyValue'); 
+    const selectedValue = $('#Chimney').val();  
+    setChimneyValue(selectedValue);  
+  }  
+
+  // Inicializar la aplicación  
+  loadChimneyValue();  
+
+  // Agregar el evento change al <select>  
+ // $('#Chimney').on('change', updateChimneyValue);  
+  $('#Chimney').change(updateChimneyValue);  
+  */
+
+                  // Funciones para obtener y establecer valores en localStorage  
+          function getRoofMaterialValue() {  
+            return localStorage.getItem('roofMaterialValue') || '';  
+          }  
+
+          function setRoofMaterialValue(value) {  
+            localStorage.setItem('roofMaterialValue', value);  
+          }  
+
+          function getMaterialTypeValue() {  
+            return localStorage.getItem('materialTypeValue') || '';  
+          }  
+
+          function setMaterialTypeValue(value) {  
+            localStorage.setItem('materialTypeValue', value);  
+          }  
+
+          function getGuttersValue() {  
+            return localStorage.getItem('guttersValue') || '';  
+          }  
+
+          function setGuttersValue(value) {  
+            localStorage.setItem('guttersValue', value);  
+          }  
+
+          function getChimneyValue() {  
+            return localStorage.getItem('chimneyValue') || '';  
+          }  
+
+          function setChimneyValue(value) {  
+            localStorage.setItem('chimneyValue', value);  
+          }  
+
+          function getRoofingValue() {  
+            return localStorage.getItem('roofingValue') || '';  
+          }  
+
+          function setRoofingValue(value) {  
+            localStorage.setItem('roofingValue', value);  
+          }  
+
+          function getRoofTypeValue() {  
+            return localStorage.getItem('roofTypeValue') || '';  
+          }  
+
+          function setRoofTypeValue(value) {  
+            localStorage.setItem('roofTypeValue', value);  
+          }  
+
+          // Funciones para cargar los valores en los elementos  
+          function loadRoofMaterialValue() {  
+            const roofMaterialValue = getRoofMaterialValue();  
+            $('#roof-material').val(roofMaterialValue);  
+          }  
+
+          function loadMaterialTypeValue() {  
+            const materialTypeValue = getMaterialTypeValue();  
+            $('#material-type').val(materialTypeValue);  
+          }  
+
+          function loadGuttersValue() {  
+            const guttersValue = getGuttersValue();  
+            $('#gutters').val(guttersValue);  
+          }  
+
+          function loadChimneyValue() {  
+            const chimneyValue = getChimneyValue();  
+            $('#Chimney').val(chimneyValue);  
+          }  
+
+          function loadRoofingValue() {  
+            const roofingValue = getRoofingValue();  
+            $('#roofing').val(roofingValue);  
+          }  
+
+          function loadRoofTypeValue() {  
+            const roofTypeValue = getRoofTypeValue();  
+            $('#type-type').val(roofTypeValue);  
+          }  
+
+          // Funciones para actualizar los valores en localStorage  
+          function updateRoofMaterialValue() {  
+            const selectedValue = $('#roof-material').val();  
+            setRoofMaterialValue(selectedValue);  
+          }  
+
+          function updateMaterialTypeValue() {  
+            const selectedValue = $('#material-type').val();  
+            setMaterialTypeValue(selectedValue);  
+          }  
+
+          function updateGuttersValue() {  
+            const selectedValue = $('#gutters').val();  
+            setGuttersValue(selectedValue);  
+          }  
+
+          function updateChimneyValue() {  
+            const selectedValue = $('#Chimney').val();  
+            setChimneyValue(selectedValue);  
+          }  
+
+          function updateRoofingValue() { 
+            alert('Please select');  
+            const selectedValue = $('#roofing').val();  
+            setRoofingValue(selectedValue);  
+          }  
+
+          function updateRoofTypeValue() {  
+            const selectedValue = $('#type-type').val();  
+            setRoofTypeValue(selectedValue);  
+          }  
+                  // Funciones para obtener y establecer valores en localStorage  
+          function getNumberOfStoriesValue() {  
+            return localStorage.getItem('numberOfStoriesValue') || '';  
+          }  
+
+          function setNumberOfStoriesValue(value) {  
+            localStorage.setItem('numberOfStoriesValue', value);  
+          }  
+
+          function getSkylightsValue() {  
+            return localStorage.getItem('skylightsValue') || '';  
+          }  
+
+          function setSkylightsValue(value) {  
+            localStorage.setItem('skylightsValue', value);  
+          }  
+
+          // Funciones para cargar los valores en los elementos  
+          function loadNumberOfStoriesValue() {  
+            const numberOfStoriesValue = getNumberOfStoriesValue();  
+            $('#Numbers').val(numberOfStoriesValue);  
+          }  
+
+          function loadSkylightsValue() {  
+            const skylightsValue = getSkylightsValue();  
+            $('#Skylights').val(skylightsValue);  
+          }  
+
+          // Funciones para actualizar los valores en localStorage  
+          function updateNumberOfStoriesValue() {  
+            const value = $('#Numbers').val();  
+            setNumberOfStoriesValue(value);  
+          }  
+
+          function updateSkylightsValue() {  
+            const value = $('#Skylights').val();  
+            setSkylightsValue(value);  
+          } 
+
+                  // Funciones para obtener y establecer valores en localStorage  
+          function getVentilationType() {  
+            return localStorage.getItem('ventilationType') || '';  
+          }  
+
+          function setVentilationType(value) {  
+            localStorage.setItem('ventilationType', value);  
+          }  
+
+          // Funciones para cargar los valores en los elementos  
+          function loadVentilationType() {  
+            const ventilationType = getVentilationType();  
+            $('#ventilation').val(ventilationType);  
+          }  
+
+          // Funciones para actualizar los valores en localStorage  
+          function updateVentilationType() {  
+            const selectedValue = $('#ventilation').val();  
+            setVentilationType(selectedValue);  
+          }  
+
+
+          // Inicializar la aplicación  
+          loadRoofMaterialValue();  
+          loadMaterialTypeValue();  
+          loadGuttersValue();  
+          loadChimneyValue();  
+          loadRoofingValue();  
+          loadRoofTypeValue();  
+          loadNumberOfStoriesValue();  
+          loadSkylightsValue();  
+          loadVentilationType();  
+
+          // Agregar los eventos change a los elementos  
+          $('#roof-material').change(updateRoofMaterialValue);  
+          $('#material-type').change(updateMaterialTypeValue);  
+          $('#gutters').change(updateGuttersValue);  
+          $('#Chimney').change(updateChimneyValue);  
+          $('#roofing').change(updateRoofingValue);  
+          $('#type-type').change(updateRoofTypeValue); 
+          $('#ventilation').change(updateVentilationType);  
+            // Inicializar la aplicación  
+  
+          // Agregar los eventos change a los elementos  
+          $('#Numbers').on('input', updateNumberOfStoriesValue);  
+          $('#Skylights').on('input', updateSkylightsValue); 
+
+      ////////////////////////////////////////////////
 
   });  
 
