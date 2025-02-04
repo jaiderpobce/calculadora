@@ -387,7 +387,7 @@ height: 2vw !important;
   }
   #calculateAreaBtn
   {
-    /*width: 40vw !important;*/
+    width: 90% !important;
       height: 7vw !important;
       border-radius: 2vw;
       border-color: #36B4FB;
