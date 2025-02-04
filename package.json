@@ -21,13 +21,13 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-  
-   "build": "vite build ",
+    "build": "vite build ",
     "test": "tsc --no-emit",
     "preview": "vite preview"
   },
   "devDependencies": {
     "@types/google.maps": "^3.58.1",
+    "@types/jquery": "^3.5.32",
     "typescript": "^5.7.3",
     "vite": "^6.0.11"
   },

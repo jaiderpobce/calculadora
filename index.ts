@@ -117,6 +117,7 @@ function initMap(): void {
         polygon = event.overlay as google.maps.Polygon;  
         const areaInSquareMeters = google.maps.geometry.spherical.computeArea(polygon.getPath());  
         const areaInSquareFeet = (areaInSquareMeters * 10.7639).toFixed(2);  
+        localStorage.setItem('medicion', areaInSquareFeet); 
         tableData.push({  
           id: tableData.length + 1,  
           area: areaInSquareFeet,  
@@ -222,7 +223,7 @@ function initMap(): void {
   
       // (Opcional) Agregar un evento para el botón cuando esté habilitado  
       $('#calculateAreaBtn').on('click', function() {  
-        alert('Calculando el área...');  
+       // alert('Calculando el área...');  
         // Aquí puedes agregar la lógica para calcular el área  
       }); 
 
@@ -361,7 +362,7 @@ function initMap(): void {
           }  
 
           function updateRoofingValue() { 
-            alert('Please select');  
+           // alert('Please select');  
             const selectedValue = $('#roofing').val();  
             setRoofingValue(selectedValue);  
           }  
@@ -482,6 +483,7 @@ function initMap(): void {
       ////////////////////////////////////////////////
 
   });  
+  //
 
   function initSelect2(selector: string) {  
     $(selector).select2({  
