@@ -45,7 +45,7 @@ function initMap(): void {
     addressInput.addEventListener("keydown", function(event) {  
       if (event.key === "Enter") {  
         searchLocation(addressInput.value);   
-        addressInput.value = "";   
+       // addressInput.value = "";   
       }  
     });  
   }  
@@ -430,6 +430,27 @@ function initMap(): void {
             setVentilationType(selectedValue);  
           }  
 
+                  // Funciones para obtener y establecer valores en localStorage  
+          function getAddressValue() {  
+            return localStorage.getItem('addressValue') || '';  
+          }  
+
+          function setAddressValue(value) {  
+            localStorage.setItem('addressValue', value);  
+          }  
+
+          // Funciones para cargar los valores en los elementos  
+          function loadAddressValue() {  
+            const addressValue = getAddressValue();  
+            $('#addressInput').val(addressValue);  
+          }  
+
+          // Funciones para actualizar los valores en localStorage  
+          function updateAddressValue() {  
+            const value = $('#addressInput').val();  
+            setAddressValue(value);  
+          }  
+
 
           // Inicializar la aplicación  
           loadRoofMaterialValue();  
@@ -441,6 +462,7 @@ function initMap(): void {
           loadNumberOfStoriesValue();  
           loadSkylightsValue();  
           loadVentilationType();  
+          loadAddressValue();  
 
           // Agregar los eventos change a los elementos  
           $('#roof-material').change(updateRoofMaterialValue);  
@@ -455,6 +477,7 @@ function initMap(): void {
           // Agregar los eventos change a los elementos  
           $('#Numbers').on('input', updateNumberOfStoriesValue);  
           $('#Skylights').on('input', updateSkylightsValue); 
+          $('#addressInput').on('input', updateAddressValue); 
 
       ////////////////////////////////////////////////
 
