@@ -21,7 +21,7 @@
       <img class="image-heard" src="image/logo.png" alt="Logo"> <!-- Cambia la ruta de la imagen aquí -->
     </div>
 
-    <div id="container"  style="display:none;">
+    <div id="container"  >
       <div id="map-container">
         <h2></h2>
 
@@ -78,7 +78,7 @@
       </div>
     </div>
 
-    <div style="display:none;" class="input-descrip">
+    <div style="display:none;" class="input-descrip" id="divmateriales">
      
       
      
@@ -205,15 +205,15 @@
      
        
       <div style="background-color: aliceblue; margin-bottom: 1vw;text-align: center;">
-        <button type="button" style="width: 60%; height: 3vw; border-radius: 2vw; border-color: #3B82F6; text-align: center; background-color:#3B82F6 ; color:#fff;"
-          id="calculateAreaBtn">Get Your Estimate</button>
+        <button class="button-get" type="button" 
+          id="calculateEstimateBtn">Get Your Estimate</button>
       </div>
     
 
     </div>
-    <div class="outer-container" style=" height: 100vh;">  
+    <div class="outer-container" style=" height: 100vh; display:none" id="outercontainer">  
       <div class="inner-container" style="background-color: #fff;">  
-        <div class="inner-div Back-div" > <h2> <i class="fas fa-chevron-left"></i>Back </h2></div>  
+        <div class="inner-div Back-div" > <h2 id="back-div"> <i class="fas fa-chevron-left"></i>Back </h2></div>  
         <div class="inner-div Almost-div" ><h1>Almost complete!</h1></div>  
         <div class="inner-div Enter-div"><h5>Enter your details to receive your quote instantly.</h5></div>  
         <div class="inner-div">  

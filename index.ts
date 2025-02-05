@@ -159,12 +159,29 @@ function initMap(): void {
     if (buttonsDiv) {  
       buttonsDiv.style.display = 'none';  
     }  
-    const contactDiv = document.querySelector('div[style="display:none;"]');  
+    const contactDiv = document.querySelector('#divmateriales');  
     if (contactDiv) {  
       contactDiv.style.display = 'block';  
     }   
     changeButtonColor();   
   }  
+  function showOutercontainer() {  
+    const buttonsDiv = document.querySelector("#container");  
+    if (buttonsDiv) {  
+      buttonsDiv.style.display = 'none';  
+    } 
+    const divmateriales = document.querySelector("#divmateriales");  
+    if (divmateriales) {  
+      divmateriales.style.display = 'none';  
+    } 
+    //const contactDiv = document.querySelector('div[style="display:none;"]');  
+    
+    const contactDiv = document.querySelector('#outercontainer');
+    if (contactDiv) {  
+      contactDiv.style.display = 'flex';    
+    }   
+    changeButtonColor();   
+  }
 
   function changeButtonColor() {  
     const button = document.getElementById("calculateAreaBtn");  
@@ -254,11 +271,24 @@ function initMap(): void {
         });
   
       // (Opcional) Agregar un evento para el botón cuando esté habilitado  
-      $('#calculateAreaBtn').on('click', function() {  
+      $('#calculateEstimateBtn').on('click', function() {  
        // alert('Calculando el área...');  
+        showOutercontainer();
         // Aquí puedes agregar la lógica para calcular el área  
-      }); 
-
+      });
+      $('#back-div').on('click', function() {  
+       // alert('Calculando el área...');  
+          
+    
+        // Ocultar el div con ID 'outercontainer'  
+        $('#outercontainer').css('display', 'none');  
+        
+        // Hacer visible los divs con IDs 'divmateriales' y 'container'  
+        $('#container').css('display', 'flex'); // También puedes ajustar esto según tu diseño 
+        showContactDiv();
+     
+       });  
+     // showContactDiv()
       /////////////////////////////////////////////
        // Función para obtener el valor de la variable en localStorage  
        /*
