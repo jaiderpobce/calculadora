@@ -21,6 +21,20 @@ body {
     color:#fff;
 
   }
+  #main-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+     margin: 20px; 
+    width: 100%;
+  }  
+  #shoosecontainer{
+   /* height: 100vh; */
+    display:flex; 
+    background-color: #33FF57;
+     margin-top: -15vw;
+
+  }
   .butondatos2-div{
     height: 2vw; background-color: rgba(181, 181, 181, 1); border-radius: 0.5vw;
   }
@@ -53,7 +67,31 @@ body {
     height: 50%;  
     width: 50%;
   }  
+  .inner-container_datos {  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: center;  
+    height: 58%;  
+    width: 60%;
+    padding: auto;
+  }
+  .inner-div_datos {  
+    color: white; /* Color del texto, opcional */  
+    padding: 20px; /* Espaciado interno, opcional */  
+    border-radius: 5px; /* Bordes redondeados, opcional */  
+  }  
+  .full-width_datos {  
+    width: 100%; /* Primera div ocupa el 100% de ancho */  
+}  
+
+.half-width_datos {  
+    width: 45.6%; /* Otras divs ocuparán el 50% de ancho */  
+} 
   
+
+
+
   .inner-div {  
     width: 60%;  
     height: 100px;  
@@ -101,7 +139,7 @@ body {
   .input-container {
     position: relative;
     /* Para posicionar el ícono en relación al input */
-    margin-bottom: 3em;
+    margin-bottom: 1em;
     /* Espacio inferior */
   }
 
@@ -120,7 +158,7 @@ body {
     margin-top:-11vw;
   }
   .imap-container{
-    height: 40%;
+    height: 45%;
     width: 100%;
     border-radius: 1vw;
   }
@@ -473,7 +511,7 @@ height: 2vw !important;
 
     }
     .imap-container{
-    height: 40%;
+    height: 45%;
     width: 100%;
     border-radius: 1vw;
     margin-top: -7vw  ;
