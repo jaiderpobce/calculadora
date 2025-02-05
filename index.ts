@@ -15,8 +15,9 @@ function initMap(): void {
     console.error("Elemento con id 'map' no encontrado.");  
     return;  
   }  
+  //1165 Northchase Pkwy SE
   let isButtonClicked = false;  
-  const map = new google.maps.Map(mapDiv, {  
+  /*const map = new google.maps.Map(mapDiv, {  
     center: { lat: 33.9541, lng: -84.5321 },  
     zoom: 20,  
     tilt: 0,  
@@ -28,7 +29,55 @@ function initMap(): void {
     scaleControl: false,         
     streetViewControl: false,    
     gestureHandling: 'false',  
-  });  
+  });  */
+
+  //-----------------------------------------------
+  const map = new google.maps.Map(mapDiv, {  
+    center: { lat: 33.9541, lng: -84.5321 },  
+    zoom: 20,  
+    tilt: 0,  
+    heading: 180,  
+    mapTypeId: "hybrid",  
+    mapTypeControl: false,  
+    fullscreenControl: false,  
+    zoomControl: false,          
+    scaleControl: false,         
+    streetViewControl: false,    
+    gestureHandling: 'false'  
+});  
+
+// Dirección por defecto  
+const address = "1165 Northchase Pkwy SE";  
+
+// Geocodificar la dirección  
+const geocoder = new google.maps.Geocoder();  
+geocoder.geocode({ address: address }, (results, status) => {  
+    if (status === 'OK') {  
+        // Verificamos si encontramos resultados  
+        if (results[0]) {  
+            // Obtener la ubicación  
+            const location = results[0].geometry.location;  
+            
+            // Ajustar latitud para desplazar el mapa hacia arriba.  
+            const adjustedLat = location.lat() + 0.0001; // Ajustar este valor según sea necesario  
+            
+            // Ajustar el centro del mapa  
+            map.setCenter({ lat: adjustedLat, lng: location.lng() });  
+            
+            // Opcional: Añadir un marcador  
+            new google.maps.Marker({  
+                position: location,  
+                map: map  
+            });  
+        } else {  
+            alert('No se encontró ninguna dirección en esta ubicación.');  
+        }  
+    } else {  
+        alert('Geocodificación falló: ' + status);  
+    }  
+});  
+
+  //----------------------------------------------
 
   //const searchInput = createSearchInput();  
   //const searchButton = createSearchButton();  
