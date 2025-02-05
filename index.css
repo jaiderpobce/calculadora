@@ -11,6 +11,16 @@ body {
 
     text-align: left;
   }
+  .button-get{
+    width: 60%; 
+    height: 3vw; 
+    border-radius: 2vw; 
+    border-color: #3B82F6; 
+    text-align: center; 
+    background-color:#3B82F6 ; 
+    color:#fff;
+
+  }
   .butondatos2-div{
     height: 2vw; background-color: rgba(181, 181, 181, 1); border-radius: 0.5vw;
   }
@@ -19,9 +29,10 @@ body {
     height: 1vw !important;
   }
   .Almost-div{
-    height: 2vw;margin-bottom: 0.1vw; background-color: brown;
+    height: 2vw;margin-bottom: 0.1vw; /*background-color: brown;*/
   }
   .Back-div{
+    margin-top: -30vw;
     background-color: #fff;
      width: 100% !important;
     justify-content: left !important;
@@ -326,6 +337,18 @@ height: 2vw !important;
 
   /* Estilos para pantallas más pequeñas */
   @media (max-width: 899px) {
+    .button-get{
+      width: 90%;
+      height: 8vw;
+      border-radius: 2vw;
+      border-color: #3B82F6;
+      text-align: center;
+      background-color: #3B82F6;
+      color: #fff;
+      margin-top: 5vw;
+      margin-bottom: 4vw;
+  
+    }
     .butondatos2-div{
       height: 8vw; background-color: rgba(181, 181, 181, 1); border-radius: 0.5vw;
     }
@@ -343,9 +366,10 @@ height: 2vw !important;
       align-items: center;  
     } 
     .Almost-div{
-      height: 20vw;margin-bottom: 0.1vw; background-color: brown;
+      height: 20vw;margin-bottom: 0.1vw;/* background-color: brown;*/
     }
     .Back-div{
+      margin-top: -30vw;
       background-color: #fff;
        width: 100% !important;
       justify-content: left !important;
@@ -358,7 +382,7 @@ height: 2vw !important;
           justify-content: center;
           height: 95%;
           width: 100%;
-          background-color: #7136fb !important;
+         /* background-color: #7136fb !important;*/
       }
 
     .select2-container--default .select2-selection--single {
