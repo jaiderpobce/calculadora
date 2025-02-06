@@ -102,7 +102,7 @@ geocoder.geocode({ address: address }, (results, status) => {
           if (place.geometry) {  
               // Mueve el mapa al lugar seleccionado  
               map.setCenter(place.geometry.location);  
-              map.setZoom(22); // O el nivel de zoom que necesites  
+              map.setZoom(20); // O el nivel de zoom que necesites  
               // Puedes mostrar un marcador si lo deseas  
               new google.maps.Marker({  
                   position: place.geometry.location,  
@@ -144,7 +144,7 @@ geocoder.geocode({ address: address }, (results, status) => {
       geocoder.geocode({ address: searchText }, (results, status) => {  
           if (status === "OK") {  
               map.setCenter(results[0].geometry.location);  
-              map.setZoom(22);  
+              map.setZoom(20);  
               updateAddressValue();
              // loadAddressValue();
               const addressValue2 = getAddressValue();  
