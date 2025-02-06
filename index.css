@@ -32,7 +32,7 @@ body {
   #shoosecontainer{
    /* height: 100vh; */
     display:flex; 
-    background-color: #33FF57;
+    /*background-color: #33FF57;*/
      margin-top: -10vw;
 
   }
@@ -163,7 +163,7 @@ body {
    }
 
   .input-container input {
-    width: 97%;
+    width: 87%;
     /* Ancho completo */
     border-radius: 1vw;
     /* Bordes redondeados */
@@ -398,7 +398,7 @@ height: 2vw !important;
       /* height: 100vh; */
       display: flex
   ;
-      background-color: #33FF57;
+      /*background-color: #33FF57;*/
       margin-top: -40vw;
   }
     .full-width_datos {
@@ -415,6 +415,7 @@ height: 2vw !important;
       width: 90%;
       margin-top: -80vw;
       padding: auto;
+      font-size: 2.2vw;
      }
 
     .button-get{
