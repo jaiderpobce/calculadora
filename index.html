@@ -36,7 +36,7 @@
         <div id="div-titulo2">
           <h4 id="titulo2"> Enter your street address to get an estimate instantly</h5>
         </div>
-        <div class="input-container">
+        <div class="input-container" id="buscador_div">
           <span class="icon">
             <i class="fas fa-map-marker-alt"></i> <!-- Ícono de ubicación de Font Awesome -->
           </span>
@@ -45,7 +45,7 @@
 
         <div id="map" class="imap-container"></div>
 
-        <div style=" margin-top: 0.5vw; display: none; " id="div-botones">
+        <div style=" margin-top: 0.5vw;  " id="div-botones">
           <div style="   display: flex;   ">
             <div style="width: 50%; text-align: left;"><button type="button"
                 style="width: 20vw; height: 3vw; border-radius: 2vw;border-color: #36B4FB;  " id="calculateInput">Select
@@ -90,7 +90,7 @@
             <div class="color-box blue"></div>  
             <div class="select-container">  
                 <label for="roof-material" style="margin-left: 1vw;">Roof material</label> 
-                <select id="roof-material" name="select1" required class="custom-select"  style="margin-left: 1vw;">  
+                <select id="roof-material" name="roof-material" required class="custom-select"  style="margin-left: 1vw;">  
                       
                     <option class="option-form" value="Shingles" selected >Shingles</option>  
                  
@@ -100,7 +100,7 @@
         <div class="flex-container">  
             <div class="select-container "> 
               <label for="material-type" style="margin-left: 1vw;">Material sub type</label> 
-                <select id="material-type" name="select2" required class="custom-select" style="margin-left: 1vw;">  
+                <select id="material-type" name="material-type" required class="custom-select" style="margin-left: 1vw;">  
                     <option value="3-tab shingle" selected>3-tab shingle  </option>  
                  
                 </select>  
@@ -113,7 +113,7 @@
             <div class="color-box blue"></div>  
             <div class="select-container">  
                 <label for="gutters" style="margin-left: 1vw;">Do you need new gutters?</label> 
-                <select id="gutters" name="select1" required class="custom-select"  style="margin-left: 1vw;">  
+                <select id="gutters" name="gutters" required class="custom-select"  style="margin-left: 1vw;">  
                     <option value="yes" selected>yes</option>  
              
                 </select>  
@@ -121,9 +121,10 @@
         </div>  
         <div class="flex-container">  
             <div class="select-container " > 
-              <label for="material-type" style="margin-left: 1vw;">Material sub type</label> 
-                <select id="material-type" name="select2" required class="custom-select" style="margin-left: 1vw;">  
-                    <option value="yes 1 layer" selected >yes 1 layer</option>  
+              <label for="tear_off" style="margin-left: 1vw;">Tear off, renoval and dumping of old roof?</label> 
+                <select id="tear_off" name="tear_off" required class="custom-select" style="margin-left: 1vw;">  
+                    <option value="yes 1 layer" selected >yes 1 layer</option> 
+                    
                     
                 </select>  
             </div>  
@@ -233,7 +234,7 @@
         </div>  
       </div>  
     </div> 
-    <div class="outer-container"  id="shoosecontainer">  
+    <div class="outer-container" style="display:none;"  id="shoosecontainer">  
       <div class="inner-container_datos" style="background-color: #fff;">  
         <div id="main-container">  
           <div class="input-container  inputcontainerdatos ">
@@ -243,7 +244,7 @@
             <input type="text" placeholder="Select address" id="addressInput_datos" readonly/>
           </div> 
           <div class="inner-div_datos full-width_datos" style="background-color: #fff;">
-           <h3 style="width: 100%;margin: auto;height: auto;">Approximate area: 1,703.56 sq ft.</h3> 
+           <h3 id="h3_area" style="width: 100%;margin: auto;height: auto;"></h3> 
           </div>  
           <div class="inner-div_datos half-width_datos" style="background-color: #fFF;">
             <label for="roof-datos" >Roof material</label>
@@ -277,7 +278,13 @@
           <div class="inner-div_datos half-width_datos" style="background-color: #fff;">
             <label for="select_type_datos" >Select the type of your roof</label>
             <input id="select_type_datos" type="text" readonly name="select_type_datos" class="custom-select"/>
-          </div>  
+          </div> 
+          <div class="inner-div_datos full-width_datos" style="background-color: #44a846;">
+            <h3 id="h3_area2" style="width: 100%;margin: auto;height: auto;"></h3> 
+           </div> 
+           <div class="inner-div_datos full-width_datos" style="background-color: #1818b8;">
+            <h3 id="h3_area3" style="width: 100%;margin: auto;height: auto;"></h3> 
+           </div>  
       </div>    
       </div>  
     </div> 
