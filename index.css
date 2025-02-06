@@ -25,14 +25,15 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-     margin: 20px; 
+    /* margin: 20px; */
     width: 100%;
+    margin-bottom: 0.5vw;
   }  
   #shoosecontainer{
    /* height: 100vh; */
     display:flex; 
     background-color: #33FF57;
-     margin-top: -15vw;
+     margin-top: -10vw;
 
   }
   .butondatos2-div{
@@ -76,17 +77,24 @@ body {
     width: 60%;
     padding: auto;
   }
-  .inner-div_datos {  
-    color: white; /* Color del texto, opcional */  
-    padding: 20px; /* Espaciado interno, opcional */  
-    border-radius: 5px; /* Bordes redondeados, opcional */  
+   
+    .inner-div_datos {
+      display: flex ;
+      color: rgb(6, 5, 5);
+      padding: 0.1vw;
+      border-radius: 5px;
+      height: 2vw;
+      /*align-items: center;*/
+      flex-direction: column;
   }  
   .full-width_datos {  
     width: 100%; /* Primera div ocupa el 100% de ancho */  
+    color: #081015;
 }  
 
 .half-width_datos {  
     width: 45.6%; /* Otras divs ocuparán el 50% de ancho */  
+    height: auto;
 } 
   
 
@@ -142,6 +150,17 @@ body {
     margin-bottom: 1em;
     /* Espacio inferior */
   }
+  .input-container_datos {
+    position: relative;
+    /* Para posicionar el ícono en relación al input */
+   /* margin-bottom: 1em;*/
+    /* Espacio inferior */
+  }
+  .inputcontainerdatos {
+   
+    width: 100%;
+    margin-bottom: 0;
+   }
 
   .input-container input {
     width: 97%;
@@ -375,6 +394,22 @@ height: 2vw !important;
 
   /* Estilos para pantallas más pequeñas */
   @media (max-width: 899px) {
+    .full-width_datos {
+      width: 100%;
+      color: #081015;
+      margin-bottom: 1vw;
+    }
+    .inner-container_datos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 58%;
+      width: 90%;
+      margin-top: -110vw;
+      padding: auto;
+     }
+
     .button-get{
       width: 90%;
       height: 8vw;

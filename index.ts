@@ -83,51 +83,82 @@ geocoder.geocode({ address: address }, (results, status) => {
   //const searchButton = createSearchButton();  
   const addressInput = document.getElementById("addressInput") as HTMLInputElement | null;   
   const calculateInput = document.getElementById("calculateInput");   
-
+  
   let drawingManager: google.maps.drawing.DrawingManager | null = null;  
   let polygon: google.maps.Polygon | null = null;  
   let areaText: google.maps.Marker | null = null;  
   let tableData = [];  
   let totalArea = 0;   
-
+  
   if (addressInput) {  
-    addressInput.addEventListener("keydown", function(event) {  
-      if (event.key === "Enter") {  
-        searchLocation(addressInput.value);   
-       // addressInput.value = "";   
-      }  
-    });  
+      // Crear un objeto de Autocomplete  
+      const autocomplete = new google.maps.places.Autocomplete(addressInput, {  
+          types: ['geocode'], // Esto restringe los resultados a direcciones  
+          componentRestrictions: { country: "US" } // Puedes ajustar según el país deseado  
+      });  
+  
+      autocomplete.addListener("place_changed", () => {  
+          const place = autocomplete.getPlace();  
+          if (place.geometry) {  
+              // Mueve el mapa al lugar seleccionado  
+              map.setCenter(place.geometry.location);  
+              map.setZoom(30); // O el nivel de zoom que necesites  
+              // Puedes mostrar un marcador si lo deseas  
+              new google.maps.Marker({  
+                  position: place.geometry.location,  
+                  map: map  
+              });  
+          } else {  
+              alert("No se encontró ninguna ubicación.");  
+          }  
+      });  
+  
+      addressInput.addEventListener("keydown", function(event) {  
+          if (event.key === "Enter") {  
+              // Si se presiona "Enter", busca la ubicación  
+              searchLocation(addressInput.value);   
+              // addressInput.value = "";   
+          }  
+      });  
   }  
-
-  // Eventos para botones  
-/*  searchButton.addEventListener("click", () => {  
-    if (addressInput) {  
-      searchLocation(addressInput.value);  
-    }  
-  });  
-*/  
+  
   const areaButton = document.getElementById("calculateAreaBtn");  
   if (areaButton) {  
-    areaButton.addEventListener("click", showContactDiv);  
+      areaButton.addEventListener("click", showContactDiv);  
   }  
   
   if (calculateInput) {  
-    calculateInput.addEventListener("click", calculateArea);  
+      calculateInput.addEventListener("click", calculateArea);  
   }  
-
+  function updateAddressValue() {  
+    const value = $('#addressInput').val();  
+    setAddressValue(value);  
+  }  
+  function setAddressValue(value) {  
+    localStorage.setItem('addressValue', value);  
+  } 
+  
   // Función de búsqueda de ubicación  
   function searchLocation(searchText: string) {  
-    const geocoder = new google.maps.Geocoder();  
-    geocoder.geocode({ address: searchText }, (results, status) => {  
-      if (status === "OK") {  
-        map.setCenter(results[0].geometry.location);  
-        map.setZoom(30);  
-      } else {  
-        alert("No se pudo encontrar la ubicación: " + status);  
-      }  
-    });  
-  }  
+      const geocoder = new google.maps.Geocoder();  
+      geocoder.geocode({ address: searchText }, (results, status) => {  
+          if (status === "OK") {  
+              map.setCenter(results[0].geometry.location);  
+              map.setZoom(30);  
+              updateAddressValue();
+             // loadAddressValue();
+              const addressValue2 = getAddressValue();  
+            $('#addressInput').val(addressValue2); 
+            $('#addressInput_datos').val(addressValue2);  
 
+          } else {  
+              alert("No se pudo encontrar la ubicación: " + status);  
+          }  
+      });  
+  } 
+  function getAddressValue() {  
+    return localStorage.getItem('addressValue') || '';  
+  }  
   // Función para calcular el área de la figura dibujada  
   function calculateArea() {  
     if (drawingManager) {  
@@ -543,25 +574,19 @@ geocoder.geocode({ address: address }, (results, status) => {
           }  
 
                   // Funciones para obtener y establecer valores en localStorage  
-          function getAddressValue() {  
-            return localStorage.getItem('addressValue') || '';  
-          }  
+         
 
-          function setAddressValue(value) {  
-            localStorage.setItem('addressValue', value);  
-          }  
+          
 
           // Funciones para cargar los valores en los elementos  
           function loadAddressValue() {  
             const addressValue = getAddressValue();  
-            $('#addressInput').val(addressValue);  
+            $('#addressInput').val(addressValue); 
+            $('#addressInput_datos').val(addressValue);  
           }  
 
           // Funciones para actualizar los valores en localStorage  
-          function updateAddressValue() {  
-            const value = $('#addressInput').val();  
-            setAddressValue(value);  
-          }  
+         
           function storeFormData() { 
             //alert('entro'); 
             localStorage.setItem('firstname', $('#firstname').val());  
