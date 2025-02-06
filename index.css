@@ -394,6 +394,13 @@ height: 2vw !important;
 
   /* Estilos para pantallas más pequeñas */
   @media (max-width: 899px) {
+    #shoosecontainer {
+      /* height: 100vh; */
+      display: flex
+  ;
+      background-color: #33FF57;
+      margin-top: -40vw;
+  }
     .full-width_datos {
       width: 100%;
       color: #081015;
@@ -545,12 +552,12 @@ height: 2vw !important;
       width: 90%;
 
     }
-    .imap-container{
-    height: 45%;
-    width: 100%;
-    border-radius: 1vw;
-    margin-top: -7vw  ;
-  }
+    .imap-container {
+      height: 30%;
+      width: 100%;
+      border-radius: 1vw;
+      margin-top: -2vw;
+     }
 
 
 
