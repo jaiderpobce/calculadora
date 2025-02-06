@@ -368,39 +368,27 @@ geocoder.geocode({ address: address }, (results, status) => {
         showContactDiv();
      
        });  
-     // showContactDiv()
-      /////////////////////////////////////////////
-       // Función para obtener el valor de la variable en localStorage  
-       /*
-  function getChimneyValue() {  
-    return localStorage.getItem('chimneyValue') || '';  
-  }  
 
-  // Función para establecer el valor de la variable en localStorage  
-  function setChimneyValue(value) {  
-    localStorage.setItem('chimneyValue', value);  
-  }  
+       $('#butondatos2').on('click', function() {  
+        // alert('Calculando el área...');  
+           
+     
+         // Ocultar el div con ID 'outercontainer'  
+         $('#outercontainer').css('display', 'none');  
+         
+         // Hacer visible los divs con IDs 'divmateriales' y 'container'  
+         $('#container').css('display', 'flex'); // También puedes ajustar esto según tu diseño 
+         $('#buscador_div').css('display', 'none');
+         $('#shoosecontainer').css('display', 'flex');
+         //shoosecontainer
+         //input-container
+         //showContactDiv();
+      
+        }); 
 
-  // Función para cargar el valor en el <select>  
-  function loadChimneyValue() {  
-    const chimneyValue = getChimneyValue();  
-    $('#Chimney').val(chimneyValue);  
-  }  
 
-  // Función para actualizar la variable en localStorage cuando se cambia la selección  
-  function updateChimneyValue() {  
-   console.log('updateChimneyValue'); 
-    const selectedValue = $('#Chimney').val();  
-    setChimneyValue(selectedValue);  
-  }  
-
-  // Inicializar la aplicación  
-  loadChimneyValue();  
-
-  // Agregar el evento change al <select>  
- // $('#Chimney').on('change', updateChimneyValue);  
-  $('#Chimney').change(updateChimneyValue);  
-  */
+   
+   
 
                   // Funciones para obtener y establecer valores en localStorage  
           function getRoofMaterialValue() {  
@@ -409,14 +397,21 @@ geocoder.geocode({ address: address }, (results, status) => {
 
           function setRoofMaterialValue(value) {  
             localStorage.setItem('roofMaterialValue', value);  
-          }  
+          }
+        
 
           function getMaterialTypeValue() {  
             return localStorage.getItem('materialTypeValue') || '';  
           }  
+          function gettear_offValue() {  
+            return localStorage.getItem('tear_offValue') || '';  
+          } 
 
           function setMaterialTypeValue(value) {  
             localStorage.setItem('materialTypeValue', value);  
+          } 
+          function settear_offValue(value) {  
+            localStorage.setItem('tear_offValue', value);  
           }  
 
           function getGuttersValue() {  
@@ -454,17 +449,31 @@ geocoder.geocode({ address: address }, (results, status) => {
           // Funciones para cargar los valores en los elementos  
           function loadRoofMaterialValue() {  
             const roofMaterialValue = getRoofMaterialValue();  
-            $('#roof-material').val(roofMaterialValue);  
+            $('#roof-material').val(roofMaterialValue); 
+            $('#roof-datos').val(roofMaterialValue);  
+
+            let medida1 = localStorage.getItem('medicion');
+            $("#h3_area").text("Approximate area: " + medida1+" sq ft.");   
           }  
 
           function loadMaterialTypeValue() {  
             const materialTypeValue = getMaterialTypeValue();  
-            $('#material-type').val(materialTypeValue);  
+            $('#material-type').val(materialTypeValue); 
+            $('#material_datos').val(materialTypeValue); 
+            
           }  
+          function loadtear_offValue() {  
+            const tear_offValue = gettear_offValue();  
+            $('#tear_off').val(tear_offValue); 
+           
+           $('#tear_off-datos').val(tear_offValue); 
+            
+          } 
 
           function loadGuttersValue() {  
             const guttersValue = getGuttersValue();  
             $('#gutters').val(guttersValue);  
+            $('#doyou-datos').val(guttersValue); 
           }  
 
           function loadChimneyValue() {  
@@ -474,12 +483,14 @@ geocoder.geocode({ address: address }, (results, status) => {
 
           function loadRoofingValue() {  
             const roofingValue = getRoofingValue();  
-            $('#roofing').val(roofingValue);  
+            $('#roofing').val(roofingValue); 
+               
           }  
 
           function loadRoofTypeValue() {  
             const roofTypeValue = getRoofTypeValue();  
-            $('#type-type').val(roofTypeValue);  
+            $('#type-type').val(roofTypeValue); 
+            $('#select_type_datos').val(roofTypeValue);  
           }  
 
           // Funciones para actualizar los valores en localStorage  
@@ -492,6 +503,10 @@ geocoder.geocode({ address: address }, (results, status) => {
             const selectedValue = $('#material-type').val();  
             setMaterialTypeValue(selectedValue);  
           }  
+          function updatetear_offValue() {  
+            const selectedValue = $('#tear_off').val();  
+            settear_offValue(selectedValue);  
+          } 
 
           function updateGuttersValue() {  
             const selectedValue = $('#gutters').val();  
@@ -534,11 +549,13 @@ geocoder.geocode({ address: address }, (results, status) => {
           function loadNumberOfStoriesValue() {  
             const numberOfStoriesValue = getNumberOfStoriesValue();  
             $('#Numbers').val(numberOfStoriesValue);  
+            $('#numbers-datos').val(numberOfStoriesValue);  
           }  
 
           function loadSkylightsValue() {  
             const skylightsValue = getSkylightsValue();  
-            $('#Skylights').val(skylightsValue);  
+            $('#Skylights').val(skylightsValue);
+            $('#skylights-datos').val(skylightsValue);   
           }  
 
           // Funciones para actualizar los valores en localStorage  
@@ -564,7 +581,8 @@ geocoder.geocode({ address: address }, (results, status) => {
           // Funciones para cargar los valores en los elementos  
           function loadVentilationType() {  
             const ventilationType = getVentilationType();  
-            $('#ventilation').val(ventilationType);  
+            $('#ventilation').val(ventilationType);
+            $('#tupe_v-datos').val(ventilationType);   
           }  
 
           // Funciones para actualizar los valores en localStorage  
@@ -605,7 +623,8 @@ geocoder.geocode({ address: address }, (results, status) => {
 
           // Inicializar la aplicación  
           loadRoofMaterialValue();  
-          loadMaterialTypeValue();  
+          loadMaterialTypeValue(); 
+          loadtear_offValue();   
           loadGuttersValue();  
           loadChimneyValue();  
           loadRoofingValue();  
@@ -618,7 +637,8 @@ geocoder.geocode({ address: address }, (results, status) => {
 
           // Agregar los eventos change a los elementos  
           $('#roof-material').change(updateRoofMaterialValue);  
-          $('#material-type').change(updateMaterialTypeValue);  
+          $('#material-type').change(updateMaterialTypeValue); 
+          $('#tear_off').change(updatetear_offValue); 
           $('#gutters').change(updateGuttersValue);  
           $('#Chimney').change(updateChimneyValue);  
           $('#roofing').change(updateRoofingValue);  
