@@ -34,7 +34,7 @@ function initMap(): void {
   //-----------------------------------------------
   const map = new google.maps.Map(mapDiv, {  
     center: { lat: 33.9541, lng: -84.5321 },  
-    zoom: 20,  
+    zoom: 19,  
     tilt: 0,  
     heading: 180,  
     mapTypeId: "hybrid",  
@@ -102,7 +102,7 @@ geocoder.geocode({ address: address }, (results, status) => {
           if (place.geometry) {  
               // Mueve el mapa al lugar seleccionado  
               map.setCenter(place.geometry.location);  
-              map.setZoom(20); // O el nivel de zoom que necesites  
+              map.setZoom(19); // O el nivel de zoom que necesites  
               // Puedes mostrar un marcador si lo deseas  
               new google.maps.Marker({  
                   position: place.geometry.location,  
