@@ -333,7 +333,8 @@ geocoder.geocode({ address: address }, (results, status) => {
       });  
 
       $('#butondatos2').on('click', function() {
-        console.log('entro');
+       // console.log('entro');
+       $("#addressInput_datos").focus();  
         storeFormData();
         });
   
@@ -357,9 +358,10 @@ geocoder.geocode({ address: address }, (results, status) => {
        });  
 
        $('#butondatos2').on('click', function() {  
-        // alert('Calculando el área...');  
-           
-     
+         alert('Calculando el área...');  
+         var scrollTarget = document.querySelector(".inputcontainerdatos");  
+         scrollTarget.scrollIntoView({ behavior: "smooth" }); // Desplazamiento suave     
+      //  $("#addressInput_datos").focus(); 
          // Ocultar el div con ID 'outercontainer'  
          $('#outercontainer').css('display', 'none');  
          
