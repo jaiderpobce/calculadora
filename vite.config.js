@@ -8,6 +8,7 @@ export default defineConfig({
         
     },*/
     //base:'.'
-    base:'https://jaiderpobce.github.io/calculadora/'
-    //base:'https://kingsroofmarketing.com/'
+    // base:'http://localhost/dist/',
+   // base:'https://jaiderpobce.github.io/calculadora/'
+    base:'https://kingsroofmarketing.com/'
 });
