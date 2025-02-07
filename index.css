@@ -218,6 +218,7 @@ body {
 .half-width_datos {  
     width: 45.6%; /* Otras divs ocuparán el 50% de ancho */  
     height: auto;
+    font-family: 'Roboto';
 } 
   
 
@@ -516,6 +517,44 @@ height: 2vw !important;
 
   /* Estilos para pantallas más pequeñas */
   @media (max-width: 899px) {
+
+    .card-text {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      margin-top: 10px;
+      display: none;
+      width: 100%;
+      font-size: 2vw;
+      font-family: 'Roboto';
+  }
+
+    .btn_detail {  
+      background-color: #3B82F6; /* Color del botón de detalles */  
+      color: white; /* Color del texto del botón de detalles */  
+      padding: 10px 15px; /* Espaciado interno */  
+      border: none; /* Sin borde */  
+      border-radius: 2vw; /* Bordes redondeados */  
+      cursor: pointer; /* Cambia el cursor al pasar */  
+      text-align: center; /* Centrar texto */  
+      margin-top: 10px; /* Espacio superior al botón de detalles */  
+      width: 80%; 
+      height: 10vw; 
+     } 
+     
+
+    .custom-select_datos {
+      width: 98%;
+      height: 6vw;
+      border-radius: 0.5vw;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      background-color: white;
+      padding: 0 5px;
+      /* margin-top: -0.5vw; */
+  }
     #shoosecontainer {
       /* height: 100vh; */
       display: flex
@@ -527,6 +566,7 @@ height: 2vw !important;
       width: 100%;
       color: #081015;
       margin-bottom: 1vw;
+      font-size: 2.5vw;
     }
     .full-width_datos_card {
       width: 100%;
