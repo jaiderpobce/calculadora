@@ -517,6 +517,14 @@ height: 2vw !important;
 
   /* Estilos para pantallas más pequeñas */
   @media (max-width: 899px) {
+    #main-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      /* margin: 20px; */
+      width: 100%;
+      margin-bottom: 3vw;
+  }
 
     .card-text {
       background-color: rgba(255, 255, 255, 0.9);
@@ -580,7 +588,7 @@ height: 2vw !important;
       justify-content: center;
       height: 58%;
       width: 90%;
-      margin-top: -80vw;
+      margin-top: -90vw;
       padding: auto;
       font-size: 2.2vw;
      }
