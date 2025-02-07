@@ -304,14 +304,50 @@ geocoder.geocode({ address: address }, (results, status) => {
 
           // Cuando se hace clic en el botón  
           $('#toggleButton').click(function() {  
-            $('#info').slideToggle(); // Muestra u oculta el texto con un efecto deslizante  
-            // Cambiar el texto del botón según el estado  
-            if ($('#info').is(':visible')) {  
-                $(this).text('Ocultar información');  
-            } else {  
-                $(this).text('Más información');  
-            }  
-        });  
+            $('#info').slideToggle(function() {  
+                // Cambiar el texto del botón según el estado al finalizar la animación  
+                if ($('#info').is(':visible')) {  
+                    $('#toggleButton').html('Hide Package Details <i class="fas fa-angle-up"></i>');  
+                } else {  
+                    $('#toggleButton').html('See Package Details <i class="fas fa-angle-down"></i>');  
+                }  
+            });  
+        }); 
+
+           // Cuando se hace clic en el botón  
+           $('#toggleButton2').click(function() {  
+            $('#info2').slideToggle(function() {  
+                // Cambiar el texto del botón según el estado al finalizar la animación  
+                if ($('#info2').is(':visible')) {  
+                    $('#toggleButton2').html('Hide Package Details <i class="fas fa-angle-up"></i>');  
+                } else {  
+                    $('#toggleButton2').html('See Package Details <i class="fas fa-angle-down"></i>');  
+                }  
+            });  
+        }); 
+          // Cuando se hace clic en el botón  
+          $('#toggleButton3').click(function() {  
+            $('#info3').slideToggle(function() {  
+                // Cambiar el texto del botón según el estado al finalizar la animación  
+                if ($('#info3').is(':visible')) {  
+                    $('#toggleButton3').html('Hide Package Details <i class="fas fa-angle-up"></i>');  
+                } else {  
+                    $('#toggleButton3').html('See Package Details <i class="fas fa-angle-down"></i>');  
+                }  
+            });  
+        }); 
+
+          // Cuando se hace clic en el botón  
+          $('#toggleButton4').click(function() {  
+            $('#info4').slideToggle(function() {  
+                // Cambiar el texto del botón según el estado al finalizar la animación  
+                if ($('#info4').is(':visible')) {  
+                    $('#toggleButton4').html('Hide Package Details <i class="fas fa-angle-up"></i>');  
+                } else {  
+                    $('#toggleButton4').html('See Package Details <i class="fas fa-angle-down"></i>');  
+                }  
+            });  
+        }); 
 
         ////////////////
 
@@ -358,9 +394,9 @@ geocoder.geocode({ address: address }, (results, status) => {
        });  
 
        $('#butondatos2').on('click', function() {  
-         alert('Calculando el área...');  
-         var scrollTarget = document.querySelector(".inputcontainerdatos");  
-         scrollTarget.scrollIntoView({ behavior: "smooth" }); // Desplazamiento suave     
+        // alert('Calculando el área...');  
+        // var scrollTarget = document.querySelector(".inputcontainerdatos");  
+        // scrollTarget.scrollIntoView({ behavior: "smooth" }); // Desplazamiento suave     
       //  $("#addressInput_datos").focus(); 
          // Ocultar el div con ID 'outercontainer'  
          $('#outercontainer').css('display', 'none');  
