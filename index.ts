@@ -197,7 +197,10 @@ geocoder.geocode({ address: address }, (results, status) => {
         polygon = event.overlay as google.maps.Polygon;  
         const areaInSquareMeters = google.maps.geometry.spherical.computeArea(polygon.getPath());  
         const areaInSquareFeet = (areaInSquareMeters * 10.7639).toFixed(2);  
-        localStorage.setItem('medicion', areaInSquareFeet); 
+        localStorage.setItem('medicion', areaInSquareFeet);
+        let medida1 = localStorage.getItem('medicion');
+            $("#h3_area").text("Approximate area: " + medida1+" sq ft."); 
+      //  h3_area
         tableData.push({  
           id: tableData.length + 1,  
           area: areaInSquareFeet,  
@@ -205,7 +208,7 @@ geocoder.geocode({ address: address }, (results, status) => {
         });  
         totalArea = tableData[tableData.length - 1].total;  
 
-        cargarTabla();  
+       // cargarTabla();  
 
         areaText = new google.maps.Marker({  
           position: polygon.getPath().getArray()[0],  
@@ -271,43 +274,9 @@ geocoder.geocode({ address: address }, (results, status) => {
     }  
   }   
 
-  function cargarTabla() {  
-    const tableBody = document.querySelector(".data-table tbody");  
-    if (tableBody) {  
-      tableBody.innerHTML = "";  
+  
+  
 
-      tableData.forEach((item) => {  
-        const row = document.createElement("tr");  
-        row.innerHTML = `  
-          <td>${item.id}</td>  
-          <td>${item.area}</td>  
-          <td>${item.total}</td>  
-        `;  
-        tableBody.appendChild(row);  
-      });  
-    }  
-  }  
-/*
-  function createSearchInput(): HTMLInputElement {  
-    const input = document.createElement("input");  
-    input.type = "text";  
-    input.id = "searchInput";  
-    input.placeholder = "Buscar ubicación";  
-    input.classList.add("search-input");  
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);  
-    return input;  
-  }  
-*/
-/*
-  function createSearchButton(): HTMLButtonElement {  
-    const button = document.createElement("button");  
-    button.id = "searchButton";  
-    button.textContent = "Buscar";  
-    button.classList.add("search-button");  
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(button);  
-    return button;  
-  }  
-*/
         function cleanArea() {  
           if (polygon) {  
             polygon.setMap(null);  
@@ -330,6 +299,24 @@ geocoder.geocode({ address: address }, (results, status) => {
     initSelect2('#roofing','roofingValue');  
     initSelect2('#type-type','roofTypeValue');  
        // Al hacer clic en el botón "Select Area"
+
+        /// tarjetas de combos//////////
+
+          // Cuando se hace clic en el botón  
+          $('#toggleButton').click(function() {  
+            $('#info').slideToggle(); // Muestra u oculta el texto con un efecto deslizante  
+            // Cambiar el texto del botón según el estado  
+            if ($('#info').is(':visible')) {  
+                $(this).text('Ocultar información');  
+            } else {  
+                $(this).text('Más información');  
+            }  
+        });  
+
+        ////////////////
+
+
+
        
        $('#calculateInput').on('click', function() { 
        // $('#calculateInput').css('background-color', '#9F9F9F');  
@@ -452,8 +439,8 @@ geocoder.geocode({ address: address }, (results, status) => {
             $('#roof-material').val(roofMaterialValue); 
             $('#roof-datos').val(roofMaterialValue);  
 
-            let medida1 = localStorage.getItem('medicion');
-            $("#h3_area").text("Approximate area: " + medida1+" sq ft.");   
+          //  let medida1 = localStorage.getItem('medicion');
+          //  $("#h3_area").text("Approximate area: " + medida1+" sq ft.");   
           }  
 
           function loadMaterialTypeValue() {  

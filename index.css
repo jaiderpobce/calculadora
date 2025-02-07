@@ -11,6 +11,116 @@ body {
 
     text-align: left;
   }
+   /*--------------*/
+   .card_old {  
+    background-color: #d7bd28; /* Color de fondo */  
+    border-radius: 10px; /* Bordes redondeados */  
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra */  
+    width: 80%;   
+    display: flex; /* Usar flexbox para dividir en columnas */  
+    padding: 20px; /* Espaciado interno */  
+}  
+.card {  
+  background-color: transparent; /* Sin color de fondo para que se observe el fondo detrás */  
+  border-radius: 10px; /* Bordes redondeados */  
+  border: 1px solid rgba(0, 0, 0, 0.2); /* Borde delgado con sombra */  
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */  
+  width: 100%;   
+  display: flex; /* Usar flexbox para dividir en columnas */  
+  padding: 20px; /* Espaciado interno */  
+}  
+
+.left-column {  
+    display: flex;  
+    flex-direction: column; /* Coloca los elementos en columna */  
+    align-items: center; /* Centra los elementos horizontalmente */  
+    margin-right: 20px; /* Espacio a la derecha para separación */  
+    width: 40%;  
+}  
+
+.right-column {  
+    display: flex;  
+    flex-direction: column;  
+    justify-content: center;  
+    width: 50%;  
+    text-align: center; 
+    align-items: center; 
+}  
+
+.card-img {  
+    max-width: 100%; /* Ancho máximo para la imagen */  
+    border-radius: 10px; /* Bordes redondeados para la imagen */  
+    margin-bottom: 10px; /* Espacio debajo de la imagen */  
+}  
+
+.card-title {  
+    font-size: 20px; /* Tamaño de fuente para el título */  
+    margin-bottom: 10px; /* Espacio debajo del título */  
+}  
+
+.card-price {  
+    font-size: 18px; /* Tamaño de fuente para el precio */  
+    margin-bottom: 10px; /* Espacio debajo del precio */  
+}  
+
+.card-text {  
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */  
+  border: 1px solid rgba(0, 0, 0, 0.2); /* Borde delgado con sombra */  
+  border-radius: 10px; /* Bordes redondeados */  
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */  
+  padding: 10px; /* Espaciado interno */  
+  margin-top: 10px; /* Espacio superior para separar del contenido previo */  
+  display: none; /* Ocultar inicialmente */  
+  width: 100%;
+  font-size: 1.1vw;
+  font-family: 'Roboto';
+}  
+
+.btn_card {  
+    background-color: #007bff; /* Color del botón */  
+    color: white; /* Color del texto del botón */  
+    padding: 10px 15px; /* Espaciado interno del botón */  
+    border: none; /* Sin borde */  
+    border-radius: 5px; /* Bordes redondeados */  
+    text-decoration: none; /* Sin subrayado */  
+    cursor: pointer; /* Cambia el cursor al pasar */  
+    margin-bottom: 10px; /* Espacio inferior al botón */  
+}  
+
+.btn_card:hover {  
+    background-color: #0056b3; /* Color de fondo al pasar el cursor */  
+}  
+
+.btn_detail {  
+    background-color: #3B82F6; /* Color del botón de detalles */  
+    color: white; /* Color del texto del botón de detalles */  
+    padding: 10px 15px; /* Espaciado interno */  
+    border: none; /* Sin borde */  
+    border-radius: 2vw; /* Bordes redondeados */  
+    cursor: pointer; /* Cambia el cursor al pasar */  
+    text-align: center; /* Centrar texto */  
+    margin-top: 10px; /* Espacio superior al botón de detalles */  
+    width: 40%; 
+    height: 2vw; 
+}  
+
+.btn_detail:hover {  
+    background-color: #218838; /* Color de fondo al pasar el cursor */  
+} 
+   /****************/
+   .custom-select_datos {  
+    width: 95%;  
+    height: 2vw;  
+    border-radius: 0.5vw; /* Bordes redondeados */  
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Borde delgado con color negro semitransparente */  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave */  
+    background-color: white; /* Fondo blanco para que el contenido sea legible */  
+    padding: 0 5px; /* Espacio interno para el texto */  
+    /* margin-top: -0.5vw; */  
+}
+
+
+
   .button-get{
     width: 60%; 
     height: 3vw; 
@@ -86,10 +196,23 @@ body {
       height: 2vw;
       /*align-items: center;*/
       flex-direction: column;
-  }  
+  } 
+  .inner-div_card {
+    display: flex ;
+    color: rgb(6, 5, 5);
+    padding: 0.1vw;
+    border-radius: 5px;
+    height: 2vw;
+    /*align-items: center;*/
+    flex-direction: column;
+}   
   .full-width_datos {  
     width: 100%; /* Primera div ocupa el 100% de ancho */  
     color: #081015;
+}  
+.full-width_datos_card {  
+  width: 100%; /* Primera div ocupa el 100% de ancho */  
+  color: #081015;
 }  
 
 .half-width_datos {  
@@ -162,16 +285,15 @@ body {
     margin-bottom: 0;
    }
 
-  .input-container input {
-    width: 97%;
-    /* Ancho completo */
-    border-radius: 1vw;
-    /* Bordes redondeados */
-    height: 2vw;
-    /* Altura del input */
-    padding-left: 2.5em;
-    /* Espacio a la izquierda para el ícono */
-  }
+   .input-container input {  
+    width: 97%; /* Ancho del 97% */  
+    border-radius: 1vw; /* Bordes redondeados */  
+    height: 2vw; /* Altura del campo de entrada */  
+    padding-left: 2.5em; /* Espacio en la izquierda para el texto */  
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Borde delgado con color negro semitransparente */  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave alrededor del campo */  
+    background-color: white; /* Fondo blanco para mejorar la legibilidad */  
+   } 
   .input-descrip
   {
     margin-top:-11vw;
@@ -402,6 +524,11 @@ height: 2vw !important;
       margin-top: -25vw;
   }
     .full-width_datos {
+      width: 100%;
+      color: #081015;
+      margin-bottom: 1vw;
+    }
+    .full-width_datos_card {
       width: 100%;
       color: #081015;
       margin-bottom: 1vw;
