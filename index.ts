@@ -34,7 +34,7 @@ function initMap(): void {
   //-----------------------------------------------
   const map = new google.maps.Map(mapDiv, {  
     center: { lat: 33.9541, lng: -84.5321 },  
-    zoom: 19,  
+    zoom: 20,  
     tilt: 0,  
     heading: 180,  
     mapTypeId: "hybrid",  
@@ -102,12 +102,23 @@ geocoder.geocode({ address: address }, (results, status) => {
           if (place.geometry) {  
               // Mueve el mapa al lugar seleccionado  
               map.setCenter(place.geometry.location);  
-              map.setZoom(19); // O el nivel de zoom que necesites  
+              map.setZoom(20); // O el nivel de zoom que necesites  
               // Puedes mostrar un marcador si lo deseas  
               new google.maps.Marker({  
                   position: place.geometry.location,  
                   map: map  
               });  
+                    // Guarda el valor del input de dirección en localStorage  
+               const addressInputValue22 = document.getElementById("addressInput").value; // Obtener el valor del input  
+                localStorage.setItem("address", addressInputValue22); // Almacenar en localStorage 
+                
+                localStorage.setItem("addressValue", addressInputValue22);
+               $('#numbers-datos').val(localStorage.getItem('address') || ''); 
+               $('#calculateInput').prop('disabled', false);  
+        //const addressValue2 = getAddressValue();  
+        //$('#addressInput').val(addressValue2); 
+       // $('#addressInput_datos').val(addressValue2); 
+
           } else {  
               alert("No se encontró ninguna ubicación.");  
           }  
@@ -118,6 +129,7 @@ geocoder.geocode({ address: address }, (results, status) => {
               // Si se presiona "Enter", busca la ubicación  
               searchLocation(addressInput.value);   
               // addressInput.value = "";   
+              $('#calculateInput').prop('disabled', false);  
           }  
       });  
   }  
@@ -296,6 +308,7 @@ geocoder.geocode({ address: address }, (results, status) => {
         } 
 
   $(document).ready(function() {  
+    localStorage.clear();
     initSelect2('#roofing','roofingValue');  
     initSelect2('#type-type','roofTypeValue');  
        // Al hacer clic en el botón "Select Area"
@@ -350,6 +363,33 @@ geocoder.geocode({ address: address }, (results, status) => {
         }); 
 
         ////////////////
+        // limpiar variables
+        function clearLocalStorage() {  
+          // Limpiar todas las variables de localStorage  
+          localStorage.clear(); // Esto elimina todas las entradas de localStorage  
+  
+         } 
+         $('#see_detail').click(function() {  
+         // alert("Local storage has been cleared!"); 
+         location.reload();  
+         // clearLocalStorage();
+         }); 
+         $('#see_detail2').click(function() {  
+         // alert("Local storage has been cleared!");
+         location.reload();   
+          //clearLocalStorage();
+         }); 
+         $('#see_detail3').click(function() {  
+          //alert("Local storage has been cleared!"); 
+          location.reload();  
+          //clearLocalStorage();
+         }); 
+         $('#see_detail4').click(function() {  
+          //alert("Local storage has been cleared!"); 
+          location.reload();  
+          //clearLocalStorage();
+         }); 
+        ///
 
 
 
@@ -370,7 +410,7 @@ geocoder.geocode({ address: address }, (results, status) => {
 
       $('#butondatos2').on('click', function() {
        // console.log('entro');
-       $("#addressInput_datos").focus();  
+       //  $("#addressInput_datos").focus();  
         storeFormData();
         });
   
@@ -394,7 +434,8 @@ geocoder.geocode({ address: address }, (results, status) => {
        });  
 
        $('#butondatos2').on('click', function() {  
-        // alert('Calculando el área...');  
+       //  alert('Calculando el área...'); 
+         loadFormData_datos(); 
         // var scrollTarget = document.querySelector(".inputcontainerdatos");  
         // scrollTarget.scrollIntoView({ behavior: "smooth" }); // Desplazamiento suave     
       //  $("#addressInput_datos").focus(); 
@@ -629,6 +670,26 @@ geocoder.geocode({ address: address }, (results, status) => {
           }  
 
           // Funciones para actualizar los valores en localStorage  
+          function loadFormData_datos() {  
+            const roofMaterialValue = localStorage.getItem('roofMaterialValue') || '';
+            $('#roof-datos').val(roofMaterialValue);
+
+            let medidas_datos= localStorage.getItem('medicion') || '';
+            $("#h3_area").text("Approximate area: " + medidas_datos+" sq ft."); 
+            
+            $('#numbers-datos').val(localStorage.getItem('numberOfStoriesValue') || '');  
+            $('#material_datos').val(localStorage.getItem('materialTypeValue') || '');  
+            $('#skylights-datos').val(localStorage.getItem('skylightsValue') || '');  
+
+            $('#doyou-datos').val(localStorage.getItem('guttersValue') || '');  
+            $('#tupe_v-datos').val(localStorage.getItem('ventilationType') || '');  
+            $('#tear_off-datos').val(localStorage.getItem('tear_offValue') || ''); 
+
+            $('#select_type_datos').val(localStorage.getItem('roofTypeValue') || ''); 
+            //
+            $('#addressInput_datos').val(localStorage.getItem('addressValue') || ''); 
+           // $('#tear_off-datos').val(localStorage.getItem('tear_offValue') || ''); 
+          }  
          
           function storeFormData() { 
             //alert('entro'); 
@@ -659,6 +720,7 @@ geocoder.geocode({ address: address }, (results, status) => {
           loadVentilationType();  
           loadAddressValue();  
           loadFormData();  
+          loadFormData_datos();
 
           // Agregar los eventos change a los elementos  
           $('#roof-material').change(updateRoofMaterialValue);  
@@ -718,7 +780,9 @@ geocoder.geocode({ address: address }, (results, status) => {
     
       // Establecer el valor seleccionado en el campo  
       $(selector).val(selectedValue).trigger('change');  
-    }   
+    }
+    
+    
 
   function formatOption(option: any) {  
     if (!option.id) {  
