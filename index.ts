@@ -439,9 +439,41 @@ geocoder.geocode({ address: address }, (results, status) => {
   
       // (Opcional) Agregar un evento para el botón cuando esté habilitado  
       $('#calculateEstimateBtn').on('click', function() {  
-       // alert('Calculando el área...');  
-        showOutercontainer();
-        // Aquí puedes agregar la lógica para calcular el área  
+         
+                const requiredFields = [  
+                  $("#roof-material"),  
+                  $("#material-type"),  
+                  $("#gutters"),  
+                  $("#tear_off"),  
+                  $("#Numbers"),  
+                  $("#Skylights"),  
+                  $("#ventilation"),  
+                  $("#Chimney"),  
+                  $("#roofing"),  
+                  $("#type-type")  
+              ];  
+
+              // Comprobar si todos los campos requeridos están llenos  
+              let allFilled = true;  
+
+              requiredFields.forEach(function(field) {  
+                  if (!field.val()) {  
+                      allFilled = false;  
+                      return false; // Romper el bucle si se encuentra un campo vacío  
+                  }  
+              });  
+
+              // Mostrar mensaje de validación  
+              if (!allFilled) {  
+                  alert("Por favor, complete todos los campos requeridos."); 
+                  return false;  
+              } else {  
+                showOutercontainer();
+              }  
+       
+
+       // showOutercontainer();
+         
       });
       $('#back-div').on('click', function() {  
        // alert('Calculando el área...');  
@@ -457,7 +489,38 @@ geocoder.geocode({ address: address }, (results, status) => {
        });  
 
        $('#butondatos2').on('click', function() {  
-       //  alert('Calculando el área...'); 
+         //--------------------------------------------
+             // Obtener los campos de entrada  
+             const firstname = $("#firstname");  
+             const lastname = $("#lastname");  
+             const phone = $("#phone");  
+             const email = $("#email");  
+ 
+             // Validar que todos los campos estén llenos  
+             if (!firstname.val().trim()) {  
+                 alert("Por favor, complete el campo del primer nombre.");  
+                 firstname.focus();  
+                 return; // Sale de la función si hay un campo vacío  
+             }  
+             if (!lastname.val().trim()) {  
+                 alert("Por favor, complete el campo del apellido.");  
+                 lastname.focus();  
+                 return;  
+             }  
+             if (!phone.val().trim()) {  
+                 alert("Por favor, complete el campo del teléfono.");  
+                 phone.focus();  
+                 return;  
+             }  
+             if (!email.val().trim()) {  
+                 alert("Por favor, complete el campo del correo electrónico.");  
+                 email.focus();  
+                 return;  
+             }  
+ 
+           
+
+        //--------------------------------------------
          loadFormData_datos(); 
         // var scrollTarget = document.querySelector(".inputcontainerdatos");  
         // scrollTarget.scrollIntoView({ behavior: "smooth" }); // Desplazamiento suave     
