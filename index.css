@@ -351,9 +351,9 @@ body {
    }
 
    .input-container input {  
-    width: 97%; /* Ancho del 97% */  
+    width: 95%; /* Ancho del 97% */  
     border-radius: 1vw; /* Bordes redondeados */  
-    height: 2vw; /* Altura del campo de entrada */  
+    height: 2.5vw; /* Altura del campo de entrada */  
     padding-left: 2.5em; /* Espacio en la izquierda para el texto */  
     border: 1px solid rgba(0, 0, 0, 0.2); /* Borde delgado con color negro semitransparente */  
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave alrededor del campo */  
@@ -705,7 +705,10 @@ height: 2vw !important;
   
     }
     .butondatos2-div{
-      height: 8vw; background-color: rgba(181, 181, 181, 1); border-radius: 0.5vw;
+      height: 8vw; 
+      background-color: #3b82f6;
+      border-radius: 2vw;
+      color: white;
     }
     .Enter-div{
        margin-top: 0.1vw;
@@ -856,7 +859,7 @@ height: 2vw !important;
     /* Ancho completo */
     border-radius: 1vw;
     /* Bordes redondeados */
-    height: 5vw;
+    height: 7vw;
     /* Altura del input */
     padding-left: 2.5em;
     /* Espacio a la izquierda para el ícono */
@@ -877,7 +880,7 @@ height: 2vw !important;
   }
   #calculateAreaBtn
   {
-    width: 90% !important;
+    width: 100% !important;
       height: 7vw !important;
       border-radius: 2vw;
       border-color: #36B4FB;
