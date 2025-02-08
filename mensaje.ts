@@ -369,48 +369,26 @@ geocoder.geocode({ address: address }, (results, status) => {
           localStorage.clear(); // Esto elimina todas las entradas de localStorage  
   
          } 
-
-         $('#butonmensaje_f').click(function() {  
-          // alert("Local storage has been cleared!"); 
-          location.reload();  
-          // clearLocalStorage();
-          }); 
-
          $('#see_detail').click(function() {  
-        
-         $('#outercontainer').css('display', 'none');  
-         $('#container').css('display', 'none'); // También puedes ajustar esto según tu diseño 
-         $('#buscador_div').css('display', 'none');
-         $('#shoosecontainer').css('display', 'none');
-         $('#card_mensaje2').css('display', 'flex');
-
-
-
-
+         // alert("Local storage has been cleared!"); 
+         //location.reload();  
+         //clearLocalStorage();
+         window.location.href = "mensaje.html";  
          }); 
-
          $('#see_detail2').click(function() {  
-          $('#outercontainer').css('display', 'none');  
-          $('#container').css('display', 'none'); // También puedes ajustar esto según tu diseño 
-          $('#buscador_div').css('display', 'none');
-          $('#shoosecontainer').css('display', 'none');
-          $('#card_mensaje2').css('display', 'flex');
-         });
-
-         $('#see_detail3').click(function() {  
-         $('#outercontainer').css('display', 'none');  
-         $('#container').css('display', 'none'); // También puedes ajustar esto según tu diseño 
-         $('#buscador_div').css('display', 'none');
-         $('#shoosecontainer').css('display', 'none');
-         $('#card_mensaje2').css('display', 'flex');
+         // alert("Local storage has been cleared!");
+         location.reload();   
+          //clearLocalStorage();
          }); 
-
+         $('#see_detail3').click(function() {  
+          //alert("Local storage has been cleared!"); 
+          location.reload();  
+          //clearLocalStorage();
+         }); 
          $('#see_detail4').click(function() {  
-         $('#outercontainer').css('display', 'none');  
-         $('#container').css('display', 'none'); // También puedes ajustar esto según tu diseño 
-         $('#buscador_div').css('display', 'none');
-         $('#shoosecontainer').css('display', 'none');
-         $('#card_mensaje2').css('display', 'flex');
+          //alert("Local storage has been cleared!"); 
+          location.reload();  
+          //clearLocalStorage();
          }); 
         ///
 
