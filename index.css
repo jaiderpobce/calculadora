@@ -11,6 +11,62 @@ body {
 
     text-align: left;
   }
+
+   /* =================================================================*/
+     /* Estilo de la tarjeta */  
+     .card_mensaje {  
+      background-color: white; /* Color de fondo blanco */  
+      border-radius: 8px; /* Bordes redondeados */  
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */  
+      width: 80%; /* Ancho fijo de la tarjeta */  
+      text-align: center; /* Alineamos el texto al centro */  
+      padding: 20px; /* Relleno interno */  
+  }  
+
+  /* Estilo del título */  
+  .card_mensaje h2 {  
+      margin: 0 0 10px 0; /* Margen inferior */  
+      font-size: 2vw; /* Tamaño de fuente del título */ 
+      margin-bottom: 3vw; 
+  }  
+
+  /* Estilo de la imagen */  
+  .card_mensaje img {  
+      max-width: 100%; /* La imagen no excederá el ancho de la tarjeta */  
+      height: auto; /* Altura automática para mantener la proporción */  
+      border-radius: 4px; /* Bordes redondeados para la imagen */  
+  }  
+
+  /* Estilo de la descripción */  
+  .card_mensaje p {  
+      font-size: 14px; /* Tamaño de fuente de la descripción */  
+      color: #666; /* Color del texto de la descripción */  
+      margin: 10px 0; /* Margen vertical */ 
+      margin-bottom: 2vw; 
+  }  
+
+  /* Estilo del botón */  
+  .card_mensaje button {  
+      background-color: #007bff; /* Color de fondo del botón */  
+      color: white; /* Color del texto del botón */  
+      border: none; /* Sin borde */  
+      border-radius: 4px; /* Bordes redondeados */  
+      padding: 10px 15px; /* Relleno interno del botón */  
+      cursor: pointer; /* Cambiamos el cursor al pasar sobre el botón */  
+      font-size: 16px; /* Tamaño de fuente del botón */  
+  }  
+
+  /* Cambio de color al pasar el cursor sobre el botón */  
+  .card_mensaje button:hover {  
+      background-color: #0056b3; /* Color más oscuro al pasar el cursor */  
+  } 
+
+
+   /* =================================================================*/
+
+
+
+
    /*--------------*/
    .card_old {  
     background-color: #d7bd28; /* Color de fondo */  
@@ -178,6 +234,15 @@ body {
     width: 50%;
   }  
   .inner-container_datos {  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: center;  
+    height: 58%;  
+    width: 60%;
+    padding: auto;
+  }
+  .inner-container_mensaje {  
     display: flex;  
     flex-direction: column;  
     align-items: center;  
@@ -516,6 +581,21 @@ height: 2vw !important;
 
   /* Estilos para pantallas más pequeñas */
   @media (max-width: 899px) {
+     
+    .card_mensaje p {
+      font-size: 14px;
+      color: #666;
+      margin: 10px 0;
+      margin-bottom: 7vw;
+  }
+
+
+    .card_mensaje h2 {
+      margin: 0 0 10px 0;
+      font-size: 4vw;
+      margin-bottom: 7vw;
+  }
+
     .btn_card {
       background-color: transparent;
       border: 2px solid transparent;
@@ -590,6 +670,17 @@ height: 2vw !important;
       margin-bottom: 1vw;
     }
     .inner-container_datos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 58%;
+      width: 90%;
+      margin-top: -90vw;
+      padding: auto;
+      font-size: 2.2vw;
+     }
+     .inner-container_mensaje {
       display: flex;
       flex-direction: column;
       align-items: center;
